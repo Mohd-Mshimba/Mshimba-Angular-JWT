@@ -2,7 +2,6 @@ import { SwalService } from './../../shared/swal.service';
 import { UserService } from './../services/user.service';
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { MatDialogRef } from '@angular/material/dialog';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { UserAuthService } from '../services/user-auth.service';
 import { Router } from '@angular/router';
@@ -36,14 +35,8 @@ export class LoginComponent {
         }else{
           this.router.navigate(['/user']);
         }
-        // console.log('==============loginForm=============');
-        // console.log(res);
-        // console.log('====================================');
 
       },error: (error: any) => {
-        // console.log('===============errorLogin===========');
-        // console.log(error);
-        // console.log('====================================');
         this.spinner.hide();
         const errorMsg = 'Fail to LogIn';
         this.swalService.errorNotification(errorMsg);

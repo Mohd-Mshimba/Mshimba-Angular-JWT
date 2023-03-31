@@ -15,6 +15,18 @@ export class UserService {
     private userAuthService: UserAuthService
   ) {}
 
+  public forUser(){
+    return this.httpClient.get(this.apiUrl+"/forUser",{
+      responseType:'text'
+    });
+  }
+
+  public forAdmin(){
+    return this.httpClient.get(this.apiUrl+"/forAdmin",{
+      responseType:'text'
+    });
+  }
+
   public login(loginData: any) {
     return this.httpClient.post(this.apiUrl + '/authenticate', loginData, {
       headers: this.requestHeader,

@@ -1,3 +1,4 @@
+import { ForbiddenComponent } from './auth/forbidden/forbidden.component';
 import { AuthGuard } from './auth/guard/auth.guard';
 import { AdminComponent } from './pages/admin/admin.component';
 import { UserComponent } from './pages/user/user.component';
@@ -26,6 +27,9 @@ const routes: Routes = [
     component: AdminComponent,
     canActivate: [AuthGuard],
     data: { roles: ['Admin'] },
+  }, {
+    path: 'forbidden',
+    component: ForbiddenComponent,
   },
 ];
 
